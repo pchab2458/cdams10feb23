@@ -101,7 +101,7 @@
 
 {% block content %}
 
-    <h1>บิลที่ต้องออกทั้งหมด {{ total_tn }} บิล [ณ. {{ cur_date|date:'d-m-y' }} {{ cur_date|time:'H:i:s' }}] </h1>
+    <h2>บิลที่ต้องออกทั้งหมด {{ total_tn }} บิล [ณ. {{ cur_date|date:'d-m-y' }} {{ cur_date|time:'H:i:s' }}] </h2>
 
     <form action="." method="post">
         {% csrf_token %}
