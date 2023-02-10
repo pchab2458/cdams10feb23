@@ -109,10 +109,9 @@ h1 {
 h2 {
     border-bottom: 1px solid cadetblue;
     padding: 0 0 15px 0;
-    margin: 5px 0 15px 0;
+    margin: 20px 0 15px 0;
 
-    font-weight: bold;
-    color: black;
+    color: blue;
 }
 
 
