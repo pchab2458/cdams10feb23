@@ -600,16 +600,18 @@ def elec_cpu_change(request):
             ex_item.cpu = cd['elec_cpu']
             ex_item.save()
 
-            # messages.info(request, 'Electricity CPU has been chnaged !!')
             messages.info(request, 'ค่าไฟฟ้า ได้ถูกเปลี่ยนเป็นค่าใหม่เรียบร้อยแล้ว')
 
             return HttpResponseRedirect(reverse_lazy('admin_page'))
         else:
-            # messages.ERROR(request, 'Error ... !!')
             messages.error(request, 'มีข้อผิดพลาดเกิดขึ้น !!!')
     else:
         elec_cpu_form = Elec_cpu_change()
-    return render(request, 'my_app/elec_cpu_change.html', {'elec_cpu_form': elec_cpu_form})
+    return render(request, 'my_app/elec_cpu_change.html',
+                  {
+                      'section': 'report',
+                      'elec_cpu_form': elec_cpu_form
+                  })
 
 
 @login_required
@@ -623,16 +625,18 @@ def water_cpu_change(request):
             ex_item.cpu = cd['water_cpu']
             ex_item.save()
 
-            # messages.success(request, 'Water CPU has been chnaged !!')
             messages.info(request, 'ค่าน้ำ ได้ถูกเปลี่ยนเป็นค่าใหม่เรียบร้อยแล้ว')
 
             return HttpResponseRedirect(reverse_lazy('admin_page'))
         else:
-            # messages.ERROR(request, 'Error ... !!')
             messages.error(request, 'มีข้อผิดพลาดเกิดขึ้น !!!')
     else:
         water_cpu_form = Water_cpu_change()
-    return render(request, 'my_app/water_cpu_change.html', {'water_cpu_form': water_cpu_form})
+    return render(request, 'my_app/water_cpu_change.html',
+                  {
+                      'section': 'report',
+                      'water_cpu_form': water_cpu_form
+                  })
 
 
 @login_required
